@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaFacebookF } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -89,8 +91,14 @@ export default function Register() {
 
       <div style={styles.divider}><span>Or</span></div>
 
-      <button style={styles.fbBtn}>🔵 Login with Facebook</button>
-      <button style={styles.googleBtn}>🟥 Login with Google</button>
+      <button style={styles.fbBtn}>
+          <FaFacebookF style={styles.icon} />
+            Login with Facebook
+                    </button>
+      <button style={styles.googleBtn}>
+            <FcGoogle style={styles.icon} />
+                Login with Google
+        </button>
     </div>
   );
 }
@@ -112,7 +120,7 @@ const styles = {
     fontWeight: 'bold',
   },
   input: {
-    width: '100%',
+    width: '90%',
     padding: 10,
     marginBottom: 12,
     borderRadius: 8,
@@ -161,22 +169,35 @@ const styles = {
   },
   fbBtn: {
     width: '100%',
-    padding: 10,
-    background: '#3b5998',
+    padding: '10px',
+    backgroundColor: '#3b5998',
     color: '#fff',
     border: 'none',
     borderRadius: 8,
-    marginBottom: 10,
     fontSize: 14,
+    fontWeight: 500,
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
   },
   googleBtn: {
     width: '100%',
-    padding: 10,
-    background: '#ffffff',
+    padding: '10px',
+    backgroundColor: '#fff',
     border: '1px solid #ccc',
     borderRadius: 8,
     fontSize: 14,
+    fontWeight: 500,
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    marginRight: 8,
+    fontSize: 18,
+    verticalAlign: 'middle',
   },
 };
